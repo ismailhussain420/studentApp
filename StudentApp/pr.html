@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student App </title>
+    <style>
+        input{
+            width:90%;
+            padding:10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .main_class{
+            width:45%;
+            margin-left:30px;
+            float :left
+        }
+        table{
+            width:90%;
+            text-align: center;
+        }
+        table,th,td{
+            padding:10px;
+            border:2px solid white;
+            color:#fff;
+            border-collapse: collapse;
+        }
+        tr:nth-child(even){
+            background-color: blueviolet;
+        }
+        tr:nth-child(odd){
+            background-color: rgb(87, 67, 105);
+
+        }
+        form{
+            box-shadow: 0px 0px 15px 2px gray;
+            padding: 18px;
+        }
+        button{
+            background: #fff;
+            color: #221589;
+            padding: 14px;
+            width: 97px;
+            border: 1px solid #221589;
+            border-radius: 28px;
+            /* margin-right: -17px; */
+            margin-left: 81%;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        button:hover{
+            background-color: #221589;
+            transition: 1s;
+            color:#fff;
+            border:1px solid #221589;
+            padding: 14px;
+            font-size: 14px;
+            font-weight: 700;
+
+        }
+        h1{
+            font-size: 59px;
+            text-align: center;
+            text-shadow: 0px 4px 2px gray;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>STUDENT APP</h1>
+
+<div class="main_class">
+    <form action="">
+        <p>Enter student name</p>
+        <input type="text "  id="nameInput"  placeholder="enter student name"><br><br>
+         <p>Enter student id</p>
+        <input id="stId" type="text " placeholder="enter student id"><br><br> 
+        <p>Enter student department</p>
+        <input type="text " placeholder="enter student department" id="dep"><br><br>
+        <p>Enter student cgpa</p>
+        <input type="text " placeholder="enter student cgpa" id="gpa"> <br><br>
+        <button id="btn" >Submit</button> 
+    </form>
+</div>
+
+<div class="main_class">
+    <table>
+        <thead>
+                <tr>
+                    <th>Name </th>
+                    <th>Id </th>
+                    <th>department </th>
+                    <th>CGPA </th>
+
+    
+                </tr>
+           
+        </thead>
+        <tbody id="tbody">
+         
+          
+        </tbody>
+       
+    </table>
+</div>
+    
+
+<script>
+    var btn = document.getElementById("btn");
+    btn.addEventListener("click",function(pera){
+        pera.preventDefault();
+        var tbody = document.getElementById("tbody");
+        var nameInput = document.getElementById("nameInput");
+        var stId =document.getElementById("stId");
+        var dep = document.getElementById("dep");
+        var gpa = document.getElementById("gpa");
+
+        var tr = document.createElement("tr");
+        var td = document.createElement("td");
+        td.innerHTML = nameInput.value;
+        tr.appendChild(td);
+       
+
+
+
+        var tdid = document.createElement("td");
+        tdid.innerHTML = stId.value;
+        tr.appendChild(tdid);
+
+        var deptd = document.createElement("td");
+        deptd.innerHTML = dep.value;
+        tr.appendChild(deptd);
+
+        var gpatd = document.createElement("td");
+        gpatd.innerHTML = gpa.value;
+        tr.appendChild(gpatd);
+        tbody.appendChild(tr);
+
+
+     
+
+    })
+</script>
+</body>
+</html>
